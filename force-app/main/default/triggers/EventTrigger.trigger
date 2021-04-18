@@ -1,5 +1,6 @@
 trigger EventTrigger on Message_Event__e (after insert) {
-    for(Message_Event__e ev: Trigger.new) {
+    System.debug('*** EventTrigger');
+    for(Message_Event__e ev: Trigger.New) {
         List<Messaging.SingleEmailMessage> mails = new List<Messaging.SingleEmailMessage>();
         Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
         List<String> sendTo = new List<String>();
@@ -11,4 +12,5 @@ trigger EventTrigger on Message_Event__e (after insert) {
         mails.add(mail);
         Messaging.sendEmail(mails);
     }
+    System.debug('*** EventTrigger');
 }
