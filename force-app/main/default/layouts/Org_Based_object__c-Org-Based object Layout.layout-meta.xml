@@ -18,6 +18,10 @@
                 <behavior>Edit</behavior>
                 <field>Text_field_1__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Test_Field_3__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
