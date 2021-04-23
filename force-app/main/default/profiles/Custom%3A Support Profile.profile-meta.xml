@@ -27,6 +27,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Org_Based_object__c.Test_Ricky_23_04__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Org_Based_object__c.Text_field_11__c</field>
         <readable>false</readable>
