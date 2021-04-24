@@ -10,6 +10,12 @@ public class CloudNewsTriggerTest {
         // Call method to publish events
         Database.SaveResult sr = EventBus.publish(newsEvent);
         Test.stopTest();
+
+        Case c = new Case();
+        c.Status = 'New';
+        c.Origin = 'Phone';
+        insert c;
+
         // Perform validation here
         // Verify that the publish was successful
         //Here is an example of a test class for our Cloud_News event and its associated trigger. 
@@ -20,7 +26,7 @@ public class CloudNewsTriggerTest {
         //and the test passes.
         System.assertEquals(true, sr.isSuccess());
         // Check that the case that the trigger created is present.
-        List<Case> cases = [SELECT Id FROM Case];
+        List<Case> cases = [SELECT Id FROM Case Where Id = : c.Id];
         // Validate that this case was found.
         // There is only one test case in test context.
         System.assertEquals(1, cases.size());
