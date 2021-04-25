@@ -12,5 +12,5 @@ trigger OrderEventTrigger on Order_Event__e  (after insert) {
             tasks.add(t);
         }
    }
-   inser tasks;
+   insert tasks;
 }
