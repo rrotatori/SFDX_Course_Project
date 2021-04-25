@@ -8,8 +8,9 @@ trigger OrderEventTrigger on Order_Event__e  (after insert) {
             Task t = new Task();
             t.Priority = 'Medium';
             t.Subject = 'Follow up on shipped order ' + event.Order_Number__c;
-            t.OwnerId = event.CreatedBy;
+            t.OwnerId = event.CreatedByID;
             tasks.add(t);
         }
    }
+   inser tasks;
 }
