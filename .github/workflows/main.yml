@@ -46,9 +46,9 @@ jobs:
       - name: Pushing source
         run:  sfdx force:source:push -f
       
-      #Run all Apex Test in our scratch org
+      #Run all Apex Test in our scratch org (-w 30 ...aspettiamo il completamento per un max di 30minutes..dopodiche killiamo)
       - name: Running Apex Tests
-        run:  sfdx force:apex:test:run -l RunLocalTests
+        run:  sfdx force:apex:test:run -l RunLocalTests -w 30
 
       #Delet scratch org after successful build (-p no prompt to confirm deletion)
       - name: Deleting Scratch Org
